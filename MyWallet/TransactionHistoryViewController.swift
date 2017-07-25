@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController3: UITableViewController {
+class TransactionHistoryViewController: UITableViewController {
     
     var viewModel: ViewModel3Type = ViewModel3()
     private var history: [EntryViewModel] = []

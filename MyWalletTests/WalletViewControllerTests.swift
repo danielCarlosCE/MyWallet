@@ -1,14 +1,14 @@
 import XCTest
 @testable import MyWallet
 
-class ViewControllerTests: XCTestCase {
+class WalletViewControllerTests: XCTestCase {
     
-    var sut: ViewController!
+    var sut: WalletViewController!
     var testViewModel: TestViewModel!
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func setUp() {
-        sut = storyboard.instantiateInitialViewController() as? ViewController
+        sut = storyboard.instantiateInitialViewController() as? WalletViewController
         
         testViewModel = TestViewModel()
         sut.viewModel = testViewModel
@@ -32,7 +32,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testPrepareForSegueWithAddExpenseDoesSetDestination() {
-        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! ViewController2
+        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! TransactionInputViewController
         let segue = UIStoryboardSegue(identifier: "addExpense", source: sut, destination: destination)
         
         sut.prepare(for: segue, sender: nil)
@@ -42,7 +42,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testCompletionDoesCallViewModelAddExpense() {
-        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! ViewController2
+        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! TransactionInputViewController
         let segue = UIStoryboardSegue(identifier: "addExpense", source: sut, destination: destination)
         let expense = 2.0
         
@@ -53,7 +53,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testPrepareForSegueWithAddCreditDoesSetDestination() {
-        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! ViewController2
+        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! TransactionInputViewController
         let segue = UIStoryboardSegue(identifier: "addCredit", source: sut, destination: destination)
         
         sut.prepare(for: segue, sender: nil)
@@ -92,7 +92,7 @@ class ViewControllerTests: XCTestCase {
     //MARK: Outgoing command: Expect to send
 
     func testCompletionDoesCallViewModelAddCredit() {
-        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! ViewController2
+        let destination = storyboard.instantiateViewController(withIdentifier: "InputVC") as! TransactionInputViewController
         let segue = UIStoryboardSegue(identifier: "addCredit", source: sut, destination: destination)
         let credit = 2.0
         
@@ -109,7 +109,7 @@ class ViewControllerTests: XCTestCase {
         sut.addExpense()
         
         eventually("presents vc2") {
-            let fulfilled = self.sut.presentedViewController is ViewController2
+            let fulfilled = self.sut.presentedViewController is TransactionInputViewController
             XCTAssert(fulfilled)
             return fulfilled
         }
@@ -120,7 +120,7 @@ class ViewControllerTests: XCTestCase {
         sut.addCredit()
         
         eventually("presents vc2") {
-            let fulfilled = self.sut.presentedViewController is ViewController2
+            let fulfilled = self.sut.presentedViewController is TransactionInputViewController
             XCTAssert(fulfilled)
             return fulfilled
         }

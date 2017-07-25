@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wallet View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WalletViewController" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="326" y="125"/>
         </scene>
-        <!--View Controller2-->
+        <!--Transaction Input View Controller-->
         <scene sceneID="SSK-3h-Gh1">
             <objects>
-                <viewController storyboardIdentifier="InputVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u2p-Hi-1il" customClass="ViewController2" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u2p-Hi-1il" customClass="TransactionInputViewController" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BtE-Ws-Etp"/>
                         <viewControllerLayoutGuide type="bottom" id="kzq-Zk-GO0"/>
@@ -129,7 +129,7 @@
         <!--History-->
         <scene sceneID="umr-19-4Xw">
             <objects>
-                <tableViewController storyboardIdentifier="HistoryVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KqZ-XJ-sh3" customClass="ViewController3" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HistoryVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KqZ-XJ-sh3" customClass="TransactionHistoryViewController" customModule="MyWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="olh-sI-u1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

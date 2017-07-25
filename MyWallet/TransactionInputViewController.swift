@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController2: UIViewController {
+class TransactionInputViewController: UIViewController {
 
     @IBOutlet weak var inputType: UILabel!
     @IBOutlet weak var input: UITextField!

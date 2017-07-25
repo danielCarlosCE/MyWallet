@@ -1,12 +1,12 @@
 import XCTest
 @testable import MyWallet
 
-class ViewController2Tests: XCTestCase {
-    var sut: ViewController2!
+class TransactionInputViewControllerTests: XCTestCase {
+    var sut: TransactionInputViewController!
     
     override func setUp() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "InputVC") as! ViewController2
+        sut = storyboard.instantiateViewController(withIdentifier: "InputVC") as! TransactionInputViewController
     }
     
     //MARK: Incoming command: Assert direct public effects

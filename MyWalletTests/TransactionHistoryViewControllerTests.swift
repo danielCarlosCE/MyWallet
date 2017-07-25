@@ -1,13 +1,13 @@
 import XCTest
 @testable import MyWallet
 
-class ViewController3Tests: XCTestCase {
+class TransactionHistoryViewControllerTests: XCTestCase {
     
-    var sut: ViewController3!
+    var sut: TransactionHistoryViewController!
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func setUp() {
-        sut = storyboard.instantiateViewController(withIdentifier: "HistoryVC") as? ViewController3
+        sut = storyboard.instantiateViewController(withIdentifier: "HistoryVC") as? TransactionHistoryViewController
     }
     //MARK: Incoming Query: Assert result
 

@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class WalletViewController: UIViewController {
 
     @IBOutlet weak var balanceLabel: UILabel!
     private let addExpenseId = "addExpense"
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let next = segue.destination as? ViewController2 else { return }
+        guard let next = segue.destination as? TransactionInputViewController else { return }
         
         if segue.identifier == addExpenseId {
             next.type = .expense
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: ViewModelDelegate {
+extension WalletViewController: ViewModelDelegate {
     func walletDiChange(newValue wallet: WalletViewModel) {
         changeBalance(with: wallet)
     }
