@@ -121,6 +121,6 @@ class TransactionInputViewControllerTests: XCTestCase {
     //MARK: Helpers
     private func loadSutsView() {
         //trigger loadView (can't call directly) and viewDidLoad
-        _ = sut.view
+        sut.loadViewIfNeeded()
     }
 }

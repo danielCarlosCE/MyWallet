@@ -14,7 +14,7 @@ class WalletViewControllerTests: XCTestCase {
         sut.viewModel = testViewModel
         
         //trigger loadView (can't call directly) and viewDidLoad
-        _ = sut.view
+        sut.loadViewIfNeeded()
     }
     
     //MARK: Incoming command: Assert direct public effects

@@ -31,7 +31,7 @@ class TransactionHistoryViewControllerTests: XCTestCase {
     func testCellForRowDoesReturnSetCell() {
         let testViewModel = TestTransactionViewModel()
         sut.viewModel = testViewModel
-        _ = sut.view
+        sut.loadViewIfNeeded()
         testViewModel.completion?([EntryViewModel(value: "$20.00")])
         
         eventually("will update tableview") {
