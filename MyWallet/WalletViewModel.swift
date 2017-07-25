@@ -1,22 +1,22 @@
 import Foundation
 
 protocol ViewModelDelegate: class {
-    func walletDiChange(newValue wallet: WalletViewModel)
+    func walletDiChange(newValue wallet: Wallet)
 }
 
-protocol ViewModelType {
+protocol WalletViewModelType {
     var delegate: ViewModelDelegate? {get set}
-    var wallet: WalletViewModel {get}
+    var wallet: Wallet {get}
 
     func addExpense(_ value: Double)
     func addCredit(_ value: Double)
 }
 
-class ViewModel: ViewModelType {
+class WalletViewModel: WalletViewModelType {
     
     weak var delegate: ViewModelDelegate?
     
-    private(set) var wallet: WalletViewModel {
+    private(set) var wallet: Wallet {
         didSet {
             delegate?.walletDiChange(newValue: wallet)
         }
@@ -26,7 +26,7 @@ class ViewModel: ViewModelType {
     
     init(storage: Storage = LocalStorage.shared) {
         self.storage = storage
-        wallet = WalletViewModel(balance: ViewModel.balanceValue(for: storage.wallet.balance), status: .positive)
+        wallet = Wallet(balance: WalletViewModel.balanceValue(for: storage.wallet.balance), status: .positive)
     }
     
     func addExpense(_ value: Double) {
@@ -41,8 +41,8 @@ class ViewModel: ViewModelType {
         updateWallet(from: storage.wallet)
     }
     
-    private func updateWallet(from wallet: Wallet) {
-        self.wallet.balance = ViewModel.balanceValue(for: storage.wallet.balance)
+    private func updateWallet(from wallet: WalletModel) {
+        self.wallet.balance = WalletViewModel.balanceValue(for: storage.wallet.balance)
         self.wallet.status = (wallet.balance >= 0) ? .positive : .negative
     }
     
@@ -52,7 +52,7 @@ class ViewModel: ViewModelType {
     
 }
 
-struct WalletViewModel {
+struct Wallet {
     enum Status {
         case negative
         case positive
@@ -62,8 +62,8 @@ struct WalletViewModel {
     var status: Status
 }
 
-extension WalletViewModel: Equatable {
-    public static func ==(lhs: WalletViewModel, rhs: WalletViewModel) -> Bool {
+extension Wallet: Equatable {
+    public static func ==(lhs: Wallet, rhs: Wallet) -> Bool {
         return lhs.balance == rhs.balance && lhs.status == rhs.status
     }
 }

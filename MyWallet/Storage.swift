@@ -2,7 +2,7 @@ import Foundation
 
 protocol Storage {
     
-    var wallet: Wallet {get}
+    var wallet: WalletModel {get}
     
     func add(value: Double)
     
@@ -10,7 +10,7 @@ protocol Storage {
     
 }
 
-struct Wallet {
+struct WalletModel {
     var balance: Double
 }
 
@@ -24,7 +24,7 @@ struct Entry: Equatable {
 }
 
 class LocalStorage: Storage {
-    private(set) var wallet = Wallet(balance: 0)
+    private(set) var wallet = WalletModel(balance: 0)
     private var history: [Entry] = []
     
     static let shared: LocalStorage = LocalStorage()

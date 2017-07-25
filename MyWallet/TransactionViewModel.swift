@@ -1,10 +1,10 @@
 import Foundation
 
-protocol ViewModel3Type {
+protocol TransactionViewModelType {
     func loadHistory(completion: @escaping ([EntryViewModel]) -> Void)
 }
 
-class ViewModel3: ViewModel3Type {
+class TransactionViewModel: TransactionViewModelType {
     let storage: Storage
     
     init(storage: Storage = LocalStorage.shared) {

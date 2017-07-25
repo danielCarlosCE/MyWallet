@@ -1,7 +1,7 @@
 @testable import MyWallet
 
 class TestStorage: Storage {
-    private(set) var wallet = Wallet(balance: 0)
+    private(set) var wallet = WalletModel(balance: 0)
     var addedValue: Double = 0
     var completion: (([Entry]) -> Void)?
     

@@ -3,29 +3,86 @@ import XCTest
 
 class WalletViewModelTests: XCTestCase {
     
-    //MARK: Incoming command: Assert direct public effects
+    var sut: WalletViewModel!
+    var testStorage: TestStorage!
     
-    func testInitDoesSetProperties() {
-        let expectedBalance = "$5.00"
-        let expectedStatus = WalletViewModel.Status.positive
-        
-        let sut = WalletViewModel(balance: expectedBalance, status: expectedStatus)
-        
-        XCTAssertEqual(sut.balance, expectedBalance)
-        XCTAssertEqual(sut.status, expectedStatus)
+    override func setUp() {
+        testStorage = TestStorage()
+        sut = WalletViewModel(storage: testStorage)
     }
     
-    //MARK: Incoming Query: Assert result
-    
-    func testEqualsDoesConsiderBalanceStatus() {
-        let sut = WalletViewModel(balance: "-$55", status: .negative)
-        let sameSut = WalletViewModel(balance: "-$55", status: .negative)
-        let differentSut1 = WalletViewModel(balance: "$10", status: .negative)
-        let differentSut2 = WalletViewModel(balance: "-$55", status: .positive)
+    //MARK: Incoming command: Assert direct public effects
+    func testAddExpenseDoesUpdateWallet() {
+        sut.addExpense(20)
         
-        XCTAssert(sut == sameSut)
-        XCTAssert(sut != differentSut1)
-        XCTAssert(sut != differentSut2)
+        XCTAssertEqual(sut.wallet.balance, balanceValue(for: testStorage.wallet.balance))
+        XCTAssertEqual(sut.wallet.status, .negative)
+    }
+    
+    func testAddCreditDoesUpdateWallet() {
+        sut.addCredit(20)
+        
+        XCTAssertEqual(sut.wallet.balance, balanceValue(for: testStorage.wallet.balance))
+        XCTAssertEqual(sut.wallet.status, .positive)
+    }
+    
+    //MARK: Outgoing command: Expect to send
+    
+    func testAddExpenseWithPositiveValueDoesAddNegativeValue() {
+        sut.addExpense(20)
+        
+        XCTAssertEqual(testStorage.addedValue, -20)
+    }
+    
+    func testAddExpenseWithNegativeValueDoesAddNegativeValue() {
+        sut.addExpense(-20)
+        
+        XCTAssertEqual(testStorage.addedValue, -20)
+    }
+    
+    func testAddCreditWithPositiveValueDoesAddPositiveValue() {
+        sut.addCredit(20)
+        
+        XCTAssertEqual(testStorage.addedValue, 20)
+    }
+    
+    func testAddCreditWithNegativeValueDoesAddPositiveValue() {
+        sut.addCredit(-20)
+        
+        XCTAssertEqual(testStorage.addedValue, 20)
+    }
+    
+    func testAddExpenseDoesCallDelegate() {
+        let delegate = TestDelegate()
+        sut.delegate = delegate
+        
+        sut.addExpense(45)
+        
+        XCTAssertEqual(delegate.newValue, sut.wallet)
+    }
+    
+    func testAddCreditDoesCallDelegate() {
+        let delegate = TestDelegate()
+        sut.delegate = delegate
+        
+        sut.addCredit(45)
+        
+        XCTAssertEqual(delegate.newValue, sut.wallet)
+    }
+    
+    //MARK: Mocks 
+    
+    class TestDelegate: ViewModelDelegate {
+        var newValue: Wallet?
+        func walletDiChange(newValue wallet: Wallet) {
+            newValue = wallet
+        }
+    }
+    
+    //MARK: Helpers
+    
+    private func balanceValue(for balance: Double) -> String {
+        return NumberFormatter.localizedString(from: NSNumber(value: balance), number: .currency)
     }
     
 }

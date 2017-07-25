@@ -13,18 +13,18 @@
 		A40A8BC11F1A5C3200F6E0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40A8BC01F1A5C3200F6E0C3 /* Assets.xcassets */; };
 		A40A8BC41F1A5C3200F6E0C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40A8BC21F1A5C3200F6E0C3 /* LaunchScreen.storyboard */; };
 		A40A8BDA1F1A606400F6E0C3 /* TransactionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A8BD91F1A606400F6E0C3 /* TransactionInputViewController.swift */; };
-		A40A8BDC1F1A687100F6E0C3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A8BDB1F1A687100F6E0C3 /* ViewModel.swift */; };
+		A40A8BDC1F1A687100F6E0C3 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A8BDB1F1A687100F6E0C3 /* WalletViewModel.swift */; };
 		A40A8BDE1F1A6F1200F6E0C3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A8BDD1F1A6F1200F6E0C3 /* Storage.swift */; };
 		A42F18951F1E79B9002D7E73 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F18941F1E79B9002D7E73 /* TransactionHistoryViewController.swift */; };
-		A42F18971F1E7A3E002D7E73 /* ViewModel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F18961F1E7A3E002D7E73 /* ViewModel3.swift */; };
+		A42F18971F1E7A3E002D7E73 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F18961F1E7A3E002D7E73 /* TransactionViewModel.swift */; };
 		A42F18991F1F70B2002D7E73 /* TransactionHistoryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F18981F1F70B2002D7E73 /* TransactionHistoryViewControllerTests.swift */; };
-		A48B72171F2151900006DBF9 /* ViewModel3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B72161F2151900006DBF9 /* ViewModel3Tests.swift */; };
+		A48B72171F2151900006DBF9 /* TransactionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B72161F2151900006DBF9 /* TransactionViewModelTests.swift */; };
 		A48B72191F2151B70006DBF9 /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B72181F2151B70006DBF9 /* TestStorage.swift */; };
 		A4DAF53F1F1D7FC600508C7A /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF53E1F1D7FC600508C7A /* AppDelegateTests.swift */; };
-		A4DAF5411F1D812100508C7A /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5401F1D812100508C7A /* WalletTests.swift */; };
+		A4DAF5411F1D812100508C7A /* WalletModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5401F1D812100508C7A /* WalletModelTests.swift */; };
 		A4DAF5431F1D823A00508C7A /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5421F1D823A00508C7A /* LocalStorageTests.swift */; };
-		A4DAF5451F1D84D900508C7A /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5441F1D84D900508C7A /* ViewModelTests.swift */; };
-		A4DAF5471F1D946400508C7A /* WalletViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5461F1D946400508C7A /* WalletViewModelTests.swift */; };
+		A4DAF5451F1D84D900508C7A /* WalletViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5441F1D84D900508C7A /* WalletViewModelTests.swift */; };
+		A4DAF5471F1D946400508C7A /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5461F1D946400508C7A /* WalletTests.swift */; };
 		A4DAF5491F1D961600508C7A /* WalletViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF5481F1D961600508C7A /* WalletViewControllerTests.swift */; };
 		A4DAF54B1F1DB07700508C7A /* TransactionInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF54A1F1DB07700508C7A /* TransactionInputViewControllerTests.swift */; };
 		A4DAF54D1F1DB3B100508C7A /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAF54C1F1DB3B100508C7A /* XCTestCaseExtension.swift */; };
@@ -51,18 +51,18 @@
 		A40A8BCA1F1A5C3200F6E0C3 /* MyWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40A8BD01F1A5C3200F6E0C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40A8BD91F1A606400F6E0C3 /* TransactionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInputViewController.swift; sourceTree = "<group>"; };
-		A40A8BDB1F1A687100F6E0C3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A40A8BDB1F1A687100F6E0C3 /* WalletViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		A40A8BDD1F1A6F1200F6E0C3 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A42F18941F1E79B9002D7E73 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
-		A42F18961F1E7A3E002D7E73 /* ViewModel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel3.swift; sourceTree = "<group>"; };
+		A42F18961F1E7A3E002D7E73 /* TransactionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		A42F18981F1F70B2002D7E73 /* TransactionHistoryViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewControllerTests.swift; sourceTree = "<group>"; };
-		A48B72161F2151900006DBF9 /* ViewModel3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel3Tests.swift; sourceTree = "<group>"; };
+		A48B72161F2151900006DBF9 /* TransactionViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewModelTests.swift; sourceTree = "<group>"; };
 		A48B72181F2151B70006DBF9 /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		A4DAF53E1F1D7FC600508C7A /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
-		A4DAF5401F1D812100508C7A /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
+		A4DAF5401F1D812100508C7A /* WalletModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletModelTests.swift; sourceTree = "<group>"; };
 		A4DAF5421F1D823A00508C7A /* LocalStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
-		A4DAF5441F1D84D900508C7A /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
-		A4DAF5461F1D946400508C7A /* WalletViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModelTests.swift; sourceTree = "<group>"; };
+		A4DAF5441F1D84D900508C7A /* WalletViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModelTests.swift; sourceTree = "<group>"; };
+		A4DAF5461F1D946400508C7A /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		A4DAF5481F1D961600508C7A /* WalletViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewControllerTests.swift; sourceTree = "<group>"; };
 		A4DAF54A1F1DB07700508C7A /* TransactionInputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInputViewControllerTests.swift; sourceTree = "<group>"; };
 		A4DAF54C1F1DB3B100508C7A /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 			children = (
 				A40A8BB91F1A5C3200F6E0C3 /* AppDelegate.swift */,
 				A40A8BDD1F1A6F1200F6E0C3 /* Storage.swift */,
-				A40A8BDB1F1A687100F6E0C3 /* ViewModel.swift */,
-				A42F18961F1E7A3E002D7E73 /* ViewModel3.swift */,
+				A40A8BDB1F1A687100F6E0C3 /* WalletViewModel.swift */,
+				A42F18961F1E7A3E002D7E73 /* TransactionViewModel.swift */,
 				A40A8BBB1F1A5C3200F6E0C3 /* WalletViewController.swift */,
 				A40A8BD91F1A606400F6E0C3 /* TransactionInputViewController.swift */,
 				A42F18941F1E79B9002D7E73 /* TransactionHistoryViewController.swift */,
@@ -127,11 +127,11 @@
 			children = (
 				A40A8BD01F1A5C3200F6E0C3 /* Info.plist */,
 				A4DAF53E1F1D7FC600508C7A /* AppDelegateTests.swift */,
-				A4DAF5401F1D812100508C7A /* WalletTests.swift */,
+				A4DAF5401F1D812100508C7A /* WalletModelTests.swift */,
 				A4DAF5421F1D823A00508C7A /* LocalStorageTests.swift */,
-				A4DAF5441F1D84D900508C7A /* ViewModelTests.swift */,
-				A48B72161F2151900006DBF9 /* ViewModel3Tests.swift */,
-				A4DAF5461F1D946400508C7A /* WalletViewModelTests.swift */,
+				A4DAF5441F1D84D900508C7A /* WalletViewModelTests.swift */,
+				A48B72161F2151900006DBF9 /* TransactionViewModelTests.swift */,
+				A4DAF5461F1D946400508C7A /* WalletTests.swift */,
 				A4DAF5481F1D961600508C7A /* WalletViewControllerTests.swift */,
 				A4DAF54A1F1DB07700508C7A /* TransactionInputViewControllerTests.swift */,
 				A42F18981F1F70B2002D7E73 /* TransactionHistoryViewControllerTests.swift */,
@@ -248,8 +248,8 @@
 				A40A8BBC1F1A5C3200F6E0C3 /* WalletViewController.swift in Sources */,
 				A40A8BBA1F1A5C3200F6E0C3 /* AppDelegate.swift in Sources */,
 				A42F18951F1E79B9002D7E73 /* TransactionHistoryViewController.swift in Sources */,
-				A42F18971F1E7A3E002D7E73 /* ViewModel3.swift in Sources */,
-				A40A8BDC1F1A687100F6E0C3 /* ViewModel.swift in Sources */,
+				A42F18971F1E7A3E002D7E73 /* TransactionViewModel.swift in Sources */,
+				A40A8BDC1F1A687100F6E0C3 /* WalletViewModel.swift in Sources */,
 				A40A8BDA1F1A606400F6E0C3 /* TransactionInputViewController.swift in Sources */,
 				A40A8BDE1F1A6F1200F6E0C3 /* Storage.swift in Sources */,
 			);
@@ -262,14 +262,14 @@
 				A4DAF54D1F1DB3B100508C7A /* XCTestCaseExtension.swift in Sources */,
 				A48B72191F2151B70006DBF9 /* TestStorage.swift in Sources */,
 				A4DAF5491F1D961600508C7A /* WalletViewControllerTests.swift in Sources */,
-				A4DAF5411F1D812100508C7A /* WalletTests.swift in Sources */,
+				A4DAF5411F1D812100508C7A /* WalletModelTests.swift in Sources */,
 				A4DAF53F1F1D7FC600508C7A /* AppDelegateTests.swift in Sources */,
-				A4DAF5451F1D84D900508C7A /* ViewModelTests.swift in Sources */,
+				A4DAF5451F1D84D900508C7A /* WalletViewModelTests.swift in Sources */,
 				A42F18991F1F70B2002D7E73 /* TransactionHistoryViewControllerTests.swift in Sources */,
 				A4DAF54B1F1DB07700508C7A /* TransactionInputViewControllerTests.swift in Sources */,
 				A4DAF5431F1D823A00508C7A /* LocalStorageTests.swift in Sources */,
-				A48B72171F2151900006DBF9 /* ViewModel3Tests.swift in Sources */,
-				A4DAF5471F1D946400508C7A /* WalletViewModelTests.swift in Sources */,
+				A48B72171F2151900006DBF9 /* TransactionViewModelTests.swift in Sources */,
+				A4DAF5471F1D946400508C7A /* WalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

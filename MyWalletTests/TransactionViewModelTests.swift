@@ -1,14 +1,14 @@
 import XCTest
 @testable import MyWallet
 
-class ViewModel3Tests: XCTestCase {
+class TransactionViewModelTests: XCTestCase {
     
-    var sut: ViewModel3!
+    var sut: TransactionViewModel!
     var testStorage: TestStorage!
     
     override func setUp() {
         testStorage = TestStorage()
-        sut = ViewModel3(storage: testStorage)
+        sut = TransactionViewModel(storage: testStorage)
     }
     
     //MARK: Incoming Query: Assert result

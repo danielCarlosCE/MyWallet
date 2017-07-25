@@ -6,7 +6,7 @@ class WalletViewController: UIViewController {
     private let addExpenseId = "addExpense"
     private let addCreditId = "addCredit"
     
-    var viewModel: ViewModelType = ViewModel()
+    var viewModel: WalletViewModelType = WalletViewModel()
     
     override func loadView() {
         super.loadView()
@@ -47,17 +47,17 @@ class WalletViewController: UIViewController {
 }
 
 extension WalletViewController: ViewModelDelegate {
-    func walletDiChange(newValue wallet: WalletViewModel) {
+    func walletDiChange(newValue wallet: Wallet) {
         changeBalance(with: wallet)
     }
     
-    fileprivate func changeBalance(with wallet: WalletViewModel) {
+    fileprivate func changeBalance(with wallet: Wallet) {
         balanceLabel.text = wallet.balance
         balanceLabel.textColor = wallet.status.color
     }
 }
 
-private extension WalletViewModel.Status {
+private extension Wallet.Status {
     var color: UIColor {
         switch self {
         case .negative:

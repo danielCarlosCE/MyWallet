@@ -2,7 +2,7 @@ import UIKit
 
 class TransactionHistoryViewController: UITableViewController {
     
-    var viewModel: ViewModel3Type = ViewModel3()
+    var viewModel: TransactionViewModelType = TransactionViewModel()
     private var history: [EntryViewModel] = []
 
     override func viewDidLoad() {

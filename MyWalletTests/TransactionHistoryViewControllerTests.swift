@@ -12,7 +12,7 @@ class TransactionHistoryViewControllerTests: XCTestCase {
     //MARK: Incoming Query: Assert result
 
     func testNumberOfRowsDoesReturnHistoryCount() {
-        let testViewModel = TestViewModel3()
+        let testViewModel = TestTransactionViewModel()
         sut.viewModel = testViewModel
         _ = sut.view
         testViewModel.completion?([EntryViewModel(value: "$20.00")])
@@ -29,7 +29,7 @@ class TransactionHistoryViewControllerTests: XCTestCase {
     }
     
     func testCellForRowDoesReturnSetCell() {
-        let testViewModel = TestViewModel3()
+        let testViewModel = TestTransactionViewModel()
         sut.viewModel = testViewModel
         _ = sut.view
         testViewModel.completion?([EntryViewModel(value: "$20.00")])
@@ -65,7 +65,7 @@ class TransactionHistoryViewControllerTests: XCTestCase {
         }
     }
     
-    class TestViewModel3: ViewModel3Type {
+    class TestTransactionViewModel: TransactionViewModelType {
         var completion: (([EntryViewModel]) -> Void)?
         func loadHistory(completion: @escaping ([EntryViewModel]) -> Void) {
             self.completion = completion

@@ -75,7 +75,7 @@ class WalletViewControllerTests: XCTestCase {
     
     func testWalletDidChangeWithPositiveBalanceDoesUpdateOutlets() {
         let expectedBalance = "$35.00"
-        sut.walletDiChange(newValue: WalletViewModel(balance: expectedBalance, status: .positive))
+        sut.walletDiChange(newValue: Wallet(balance: expectedBalance, status: .positive))
         
         XCTAssertEqual(sut.balanceLabel.text, expectedBalance)
         XCTAssertEqual(sut.balanceLabel.textColor, .green)
@@ -83,7 +83,7 @@ class WalletViewControllerTests: XCTestCase {
     
     func testWalletDidChangeWithNegativeBalanceDoesUpdateOutlets() {
         let expectedBalance = "-$35.00"
-        sut.walletDiChange(newValue: WalletViewModel(balance: expectedBalance, status: .negative))
+        sut.walletDiChange(newValue: Wallet(balance: expectedBalance, status: .negative))
         
         XCTAssertEqual(sut.balanceLabel.text, expectedBalance)
         XCTAssertEqual(sut.balanceLabel.textColor, .red)
@@ -129,9 +129,9 @@ class WalletViewControllerTests: XCTestCase {
     
     //MARK: Mocks
     
-    class TestViewModel: ViewModelType {
+    class TestViewModel: WalletViewModelType {
         weak var delegate: ViewModelDelegate?
-        private(set) var wallet: WalletViewModel = WalletViewModel(balance: "$0.00", status: .positive)
+        private(set) var wallet: Wallet = Wallet(balance: "$0.00", status: .positive)
         
         func addExpense(_ value: Double) {wallet.balance = "-\(value)"}
         func addCredit(_ value: Double) {wallet.balance = "+\(value)"}
